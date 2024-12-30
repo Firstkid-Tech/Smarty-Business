@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smarty-Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #F0F4F8;
+            color: #333;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-icon {
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-icon:hover {
+            transform: rotate(90deg);
+        }
+
+        nav {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 20px;
+            background-color: #0056b3;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .show-menu {
+            display: block;
+            animation: slideIn 0.3s ease forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        section {
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 1100px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #007BFF;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF; /* Blue background */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: scale(1.05);
+        }
+
+        .service {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .service-item {
+            width: 48%;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .service-item {
+                width: 100%;
+            }
+
+            nav {
+                top: 50px;
+                left: 10px;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ion-icon name="reorder-three-outline" class="menu-icon"></ion-icon>
+        <h1>Smarty-Tech</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#info">Informations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Bienvenu(e) cher client</h2>
+        <p>Nous vous offrons les meilleurs produits en ligne, des montres, des chaussures, des ballons et bien plus encore.</p>
+        <a href="#services" class="button">Découvrez nos services</a>
+    </section>
+
+    <section id="services">
+        <h2>Nos Services</h2>
+        <div class="service">
+            <div class="service-item">
+                <h3>Chaussures</h3>
+                <p>Des modèles sportifs ou de luxe à des prix incroyables aussi il y a des nikes , des jordans tout cela etc....</p>
+                <a href="#" class="button">Voir les modèles</a>
+            </div>
+            <div class="service-item">
+                <h3>Montres</h3>
+                <p>Des montres élégantes et de qualité à des prix abordables comme des kikx x8 ultra ou des Apple watch.</p>
+                <a href="#" class="button">Voir les montres</a>
+            </div>
+            <div class="service-item">
+                <h3>Bracelets</h3>
+                <p>Nous vendons plusieurs types de bracelets comme les bracelets noirs , rouges , verts etc... Pour plus informations clique sur voir les bracelets.</p>
+                <a href="#" class="button">Voir les ballons</a>
+            </div>
+            <div class="service-item">
+                <h3>Top-Up Free Fire</h3>
+                <p>Recevez vos diamants Free Fire rapidement et en toute sécurité.</p>
+                <a href="#" class="button">Top-Up maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="info">
+        <h2>Informations</h2>
+        <p>Découvrez nos politiques de retour et notre service client exceptionnel.</p>
+    </section>
+    <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const navMenu = document.querySelector('nav');
+
+        menuIcon.addEventListener('click', () => {
+            navMenu.classList.toggle('show-menu');
+        });
+    </script>
+</body>
+</html>
